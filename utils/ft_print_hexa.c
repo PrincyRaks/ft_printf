@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "utils.h"
+#include <stdio.h>
 
 void    ft_print_hexa(long l, char format_hexa)
 {
     if (format_hexa == 'p')
-        ft_putstr_fd("0x");
+        ft_putstr_fd("0x", FD);
     if (format_hexa == 'p' || format_hexa == 'x')
         ft_putnbr_base(l, "0123456789abcdef");
     else if (format_hexa == 'X')

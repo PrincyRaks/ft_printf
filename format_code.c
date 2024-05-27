@@ -15,15 +15,16 @@
 
 void    format_code(const char *str, va_list ap)
 {
-    // printf("ICI %c", *str);
+    // printf("ICI %c\n", *str);
     if (*str == 'c')
         ft_putchar_fd(va_arg(ap, int), FD);
     else if (*str == 's')
         ft_putstr_fd(va_arg(ap, char*), FD);
-    // else if (*str == 'p')
-    //     ft_print_hexa(va_arg(ap, unsigned long), FD);
-    // else if (*str == 'd')
-    //     ft_putstr_fd(ft_itoa(va_arg(ap, int)), FD);
+    else if (*str == 'p')
+        // printf("%lu",va_arg(ap, unsigned long));
+        ft_print_hexa(va_arg(ap, unsigned long), *str);
+    else if (*str == 'd')
+        ft_putstr_fd(ft_itoa(va_arg(ap, int)), FD);
     // else if (*str == 'i')
     //     ft_putstr_fd(ft_itoa(va_arg(ap, int)), FD);
     // else if (*str == 'u')

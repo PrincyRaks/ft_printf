@@ -12,15 +12,19 @@
 #ifndef UTILS_H
 # define UTILS_H
 
-# include <unistd.h>
+# ifndef FD
+#  define FD 1
+# endif
+
 # include <stddef.h>
 
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putchar_fd(char c, int fd);
-// size_t	ft_strlen(const char *s);
-// int	    is_base(char *str);
-// void	ft_putnbr_base(long l, char *base);
-// void    ft_print_hexa(long l, char format_hexa);
-// char	*ft_itoa(int n);
+size_t	ft_strlen(const char *s);
+int	    is_base(char *str);
+void	ft_putnbr_base(long l, char *base);
+void    ft_print_hexa(long l, char format_hexa);
+char	*ft_itoa(int n);
+char	*ft_strdup(const char *s);
 
 #endif

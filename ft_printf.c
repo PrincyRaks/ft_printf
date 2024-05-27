@@ -23,7 +23,7 @@ int	ft_printf(const char *str, ...)
 	while (str[nprint])
 	{
 		if (str[nprint] == '%')
-            format_code(&str[nprint++], ap);
+            format_code(&str[++nprint], ap);
 		else if (str[nprint] != '%')
             ft_putchar_fd(str[nprint], FD);
 		nprint++;
@@ -36,8 +36,9 @@ int	ft_printf(const char *str, ...)
 int main ()
 {
 	int a = 12;
-
-	printf("My number print %d\n", ft_printf("My function : %d et %p\n", a, (void*)&a));
-	printf("Number print %d\n",printf("the printf : %d et %p\n", a, (void*)&a));
+	int n1 = ft_printf("1-function : %d et %p\n", a, (void*)&a);
+	int n2 = printf("2-function : %d et %p\n", a, (void*)&a);
+	printf("1-number print %d\n", n1);
+	printf("2-number print %d\n", n2);
 	return (0);
 }
