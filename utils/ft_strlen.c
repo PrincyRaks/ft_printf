@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrakotos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/22 11:20:15 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/03/22 12:28:45 by rrakotos         ###   ########.fr       */
+/*   Created: 2024/02/19 10:54:06 by rrakotos          #+#    #+#             */
+/*   Updated: 2024/02/19 10:58:35 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# ifndef FD
-#  define FD 1
-# endif
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
 
-# include "./utils/utils.h"
-
-int		ft_printf(const char *str, ...);
-void	format_code(const char *str, va_list ap);
-
-#endif
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	return (i);
+}

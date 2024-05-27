@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrakotos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/22 11:52:33 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/03/22 12:29:16 by rrakotos         ###   ########.fr       */
+/*   Created: 2024/02/28 09:33:27 by rrakotos          #+#    #+#             */
+/*   Updated: 2024/02/28 09:41:20 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef UTILS_H
-# define UTILS_H
+#include "utils.h"
 
-void    ft_putchar_fd(char c, int fd);
-
-#endif
+void	ft_putchar_fd(char c, int fd)
+{
+	write (fd, &c, 1);
+}

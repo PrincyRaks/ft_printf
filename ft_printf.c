@@ -23,24 +23,21 @@ int	ft_printf(const char *str, ...)
 	while (str[nprint])
 	{
 		if (str[nprint] == '%')
-		{
-            format_code(&str[nprint]);
-            nprint++;
-        }
+            format_code(&str[nprint++], ap);
 		else if (str[nprint] != '%')
             ft_putchar_fd(str[nprint], FD);
 		nprint++;
 	}
+	va_end(ap);
 	return (nprint--);
 }
 
 
 int main ()
 {
-	// show(3,  "jjj", 45,'c',"lala",15.6);
-	// printf("number print: %d\n",printf("Hello :%d\n", a));
-	// printf("ggd %");
-	int n = ft_printf("hello %d\n",8);
-	printf("number of print: %d\n",n);
+	int a = 12;
+
+	printf("My number print %d\n", ft_printf("My function : %d et %p\n", a, (void*)&a));
+	printf("Number print %d\n",printf("the printf : %d et %p\n", a, (void*)&a));
 	return (0);
 }

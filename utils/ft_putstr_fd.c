@@ -1,24 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrakotos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/22 11:20:15 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/03/22 12:28:45 by rrakotos         ###   ########.fr       */
+/*   Created: 2024/02/28 09:41:40 by rrakotos          #+#    #+#             */
+/*   Updated: 2024/02/28 10:07:06 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "utils.h"
 
-# ifndef FD
-#  define FD 1
-# endif
-
-# include "./utils/utils.h"
-
-int		ft_printf(const char *str, ...);
-void	format_code(const char *str, va_list ap);
-
-#endif
+void	ft_putstr_fd(char *s, int fd)
+{
+	write (fd, s, ft_strlen(s));
+}
