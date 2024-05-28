@@ -11,34 +11,39 @@
 /* ************************************************************************** */
 #include <stdarg.h>
 #include "libft.h"
-#include <stdio.h>
+
 
 int	ft_printf(const char *str, ...)
 {
 	va_list	ap;
 	int		nprint;
+	int		n_format;
 
 	nprint = 0;
+	n_format = 0;
 	va_start(ap, str);
 	while (str[nprint])
 	{
 		if (str[nprint] == '%')
-            format_code(&str[++nprint], ap);
-		else if (str[nprint] != '%')
-            ft_putchar_fd(str[nprint], FD);
+			n_format += format_code(&str[++nprint], ap);
+		else
+			n_format += ft_putchar_fd(str[nprint], FD);
 		nprint++;
 	}
 	va_end(ap);
-	return (nprint--);
+	return (n_format--);
 }
 
-
-int main ()
-{
-	int a = 12;
-	int n1 = ft_printf("1-function : %d et %p\n", a, (void*)&a);
-	int n2 = printf("2-function : %d et %p\n", a, (void*)&a);
-	printf("1-number print %d\n", n1);
-	printf("2-number print %d\n", n2);
-	return (0);
-}
+// #include <limits.h>
+// #include <stdio.h>
+// int main ()
+// {
+// 	// int a = 65;
+// 	// char *s = "Hello World";
+// 	// int n1 = ft_printf("1:%p %d %x %X\n", s, -12000, 254, 546546);
+// 	// int n2 = printf("2:%p %d %x %X\n", s, -12000, 254, 546546);
+// 	// printf("1-number print %d\n", n1);
+// 	// printf("2-number print %d\n", n2);
+// 	// printf("%d\n", 4534535434534345);
+// 	return (0);
+// }

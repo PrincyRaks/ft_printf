@@ -1,18 +1,10 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rrakotos <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 09:41:40 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/02/28 10:07:06 by rrakotos         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+
 #include "utils.h"
 #include <unistd.h>
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s, int fd)
 {
-	write (fd, s, ft_strlen(s));
+	int	l = (int) ft_strlen(s);
+	write (fd, s, (size_t)l);
+	return (l);
 }

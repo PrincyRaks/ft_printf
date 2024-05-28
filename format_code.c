@@ -13,22 +13,27 @@
 #include <stdarg.h>
 #include "libft.h"
 
-void    format_code(const char *str, va_list ap)
+int    format_code(const char *str, va_list ap)
 {
+    int n_format;
+
+    n_format = 0;
     // printf("ICI %c\n", *str);
     if (*str == 'c')
-        ft_putchar_fd(va_arg(ap, int), FD);
+        n_format = ft_putchar_fd(va_arg(ap, int), FD);
     else if (*str == 's')
-        ft_putstr_fd(va_arg(ap, char*), FD);
+        n_format = ft_putstr_fd(va_arg(ap, char*), FD);
     else if (*str == 'p')
-        // printf("%lu",va_arg(ap, unsigned long));
-        ft_print_hexa(va_arg(ap, unsigned long), *str);
+        n_format = ft_print_hexa(va_arg(ap, unsigned long), *str);
     else if (*str == 'd')
-        ft_putstr_fd(ft_itoa(va_arg(ap, int)), FD);
-    // else if (*str == 'i')
-    //     ft_putstr_fd(ft_itoa(va_arg(ap, int)), FD);
-    // else if (*str == 'u')
-    // else if (*str == 'x' || *str == 'X')
+        n_format = ft_putstr_fd(ft_itoa(va_arg(ap, int)), FD);
+    else if (*str == 'i')
+        n_format = ft_putstr_fd(ft_itoa(va_arg(ap, int)), FD);
+    else if (*str == 'u')
+        n_format = ft_putnbr_positive(va_arg(ap, unsigned int));
+    else if (*str == 'x' || *str == 'X')
+        n_format = ft_print_hexa(va_arg(ap, unsigned int), *str);
     else
-        ft_putchar_fd('%',FD);
+        n_format = ft_putchar_fd('%',FD);
+    return (n_format);
 }
