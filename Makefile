@@ -1,15 +1,14 @@
 CFLAGS= -Wall -Wextra -Werror
 SRC= format_code.c \
-	ft_printf.c \
+	ft_printf.c
 	
-UTILS_SRCS=	./utils/ft_itoa.c \
-	./utils/ft_print_hexa.c \
+UTILS_SRCS= ./utils/ft_print_hexa.c \
 	./utils/ft_putchar_fd.c \
 	./utils/ft_putnbr_base.c \
-	./utils/ft_putnbr_positive.c \
+	./utils/ft_putnbr_uint.c \
 	./utils/ft_putstr_fd.c \
-	./utils/ft_strdup.c \
-	./utils/ft_strlen.c
+	./utils/ft_strlen.c \
+	./utils/ft_putnbr_int.c
 
 OBJS= $(SRC:.c=.o)
 UTILS_OBJS = $(UTILS_SRCS:.c=.o)

@@ -9,9 +9,8 @@
 /*   Updated: 2024/03/22 11:22:55 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdarg.h>
 #include "libft.h"
-
+#include <stdarg.h>
 
 int	ft_printf(const char *str, ...)
 {
@@ -34,16 +33,20 @@ int	ft_printf(const char *str, ...)
 	return (n_format--);
 }
 
-// #include <limits.h>
-// #include <stdio.h>
-// int main ()
-// {
-// 	// int a = 65;
-// 	// char *s = "Hello World";
-// 	// int n1 = ft_printf("1:%p %d %x %X\n", s, -12000, 254, 546546);
-// 	// int n2 = printf("2:%p %d %x %X\n", s, -12000, 254, 546546);
-// 	// printf("1-number print %d\n", n1);
-// 	// printf("2-number print %d\n", n2);
-// 	// printf("%d\n", 4534535434534345);
-// 	return (0);
-// }
+#include <limits.h>
+#include <stdio.h>
+int main ()
+{
+	int a = 65 - 54;
+	char *s;
+	s = "Hello dddd";
+	// int n1 = ft_printf("1:%p %d %x %X\n", s, -12000, 254, 546546);
+	// int n2 = printf("2:%p %d %x %X\n", s, -12000, 254, 546546);
+	// int n1 = ft_printf("%d", 0);
+	// int n2 = printf("%d", 0);
+	// printf("1-number print %d\n", n1);
+	// printf("2-number print %d\n", n2);
+	printf("%+d\n", a);
+	// printf("%-d\n", a);
+	return (0);
+}

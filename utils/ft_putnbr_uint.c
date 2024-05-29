@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr_uint.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrakotos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/29 13:36:53 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/05/29 13:36:56 by rrakotos         ###   ########.fr       */
+/*   Created: 2024/05/29 13:43:52 by rrakotos          #+#    #+#             */
+/*   Updated: 2024/05/29 13:43:54 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-int	ft_putnbr_base(unsigned long l, char *base)
+int	ft_putnbr_uint(unsigned int n)
 {
-	int	n_base;
-
-	n_base = ft_strlen(base);
-	if (l >= (unsigned long)n_base)
-		return (ft_putnbr_base(l / n_base, base) + ft_putnbr_base(l % n_base,
-				base));
+	if (n > 9)
+		return (ft_putnbr_uint(n / 10) + ft_putnbr_uint(n % 10));
 	else
-		return (ft_putchar_fd(base[l], FD));
+		return (ft_putchar_fd(n + '0', FD));
 }
