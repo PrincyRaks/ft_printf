@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   bonus.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrakotos <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/29 13:47:00 by rrakotos          #+#    #+#             */
-/*   Updated: 2024/05/29 13:47:13 by rrakotos         ###   ########.fr       */
+/*   Created: 2024/05/30 11:34:15 by rrakotos          #+#    #+#             */
+/*   Updated: 2024/05/30 11:34:17 by rrakotos         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
+#ifndef BONUS_H
+# define BONUS_H
 
 # ifndef FD
 #  define FD 1
 # endif
 
+# include "../utils/utils.h"
 # include <stddef.h>
 # include <stdio.h>
 
-int		ft_putchar_fd(char c, int fd);
-int		ft_putstr_fd(char *s, int fd);
-size_t	ft_strlen(const char *s);
-int		ft_putnbr_base(unsigned long l, char *base);
-int		ft_print_hexa(unsigned long l, char format_hexa);
-int		ft_putnbr_uint(unsigned int n);
-char	*nbr_str(size_t size, int n, int is_neg);
-int		ft_putnbr_int(int n);
-
-
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strdup(const char *s);
+int		ft_atoi(const char *nptr);
+int		ft_putwitdh(unsigned int n_width, int n_format, char is_zero);
+int		ft_getwidth_str(char *str);
 #endif
